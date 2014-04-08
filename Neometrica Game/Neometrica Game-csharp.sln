@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{CF38BA30-CAA3-AF93-3184-96BCE36F65C5}") = "Neometrica Game", "Assembly-CSharp-firstpass-vs.csproj", "{9BA1F21B-680A-5DA9-8098-41DC9A7147EA}"
+Project("{CF38BA30-CAA3-AF93-3184-96BCE36F65C5}") = "Neometrica Game", "Assembly-CSharp-vs.csproj", "{39987A42-3362-D7E7-EAC9-F1F7F218F227}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9BA1F21B-680A-5DA9-8098-41DC9A7147EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BA1F21B-680A-5DA9-8098-41DC9A7147EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BA1F21B-680A-5DA9-8098-41DC9A7147EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BA1F21B-680A-5DA9-8098-41DC9A7147EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39987A42-3362-D7E7-EAC9-F1F7F218F227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39987A42-3362-D7E7-EAC9-F1F7F218F227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39987A42-3362-D7E7-EAC9-F1F7F218F227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39987A42-3362-D7E7-EAC9-F1F7F218F227}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																						GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

@@ -1,15 +1,15 @@
 #pragma strict
 
-var bullet : Rigidbody;
-var speed = 10.0;
-
 @script RequireComponent(AudioSource)
 var bulletShootSound : AudioClip;
 
+var bulletPrefab : Rigidbody;
+var bulletSpeed : int;
 
 function Start () 
 {
 	Screen.showCursor = false;
+	bulletSpeed = 60;
 }
 
 function Update ()
@@ -19,18 +19,26 @@ function Update ()
 	
 	if (Input.GetMouseButtonDown(0))
 	{
-		fireBullet();
-		if (Physics.Raycast (ray, hit, 100))
+		if (GameObject.Find("FirstPersonController").GetComponent(PlayerController).playerAmmo >= 1)
 		{
-			print("You fired at " + hit.collider.gameObject.tag);
+			fireBullet();
+			if (Physics.Raycast (ray, hit, 100))
+			{
+				print("You fired at " + hit.collider.gameObject.tag);
+			}
+		}
+		else
+		{
+			print("You are out of ammo");
 		}
 	}
 }
 
 function fireBullet()
 {
-	var bulletClone : Rigidbody = Instantiate(bullet, transform.position, transform.rotation);
-	bulletClone.velocity = transform.TransformDirection(Vector3(0, 0, speed));
-	audio.PlayOneShot(bulletShootSound);
+	var bulletClone : Rigidbody = Instantiate(bulletPrefab, transform.position + transform.forward * 2.0, transform.rotation);
+	bulletClone.velocity = transform.TransformDirection(Vector3(0, 0, bulletSpeed));
 	Destroy (bulletClone.gameObject, 1);
+	GameObject.Find("FirstPersonController").GetComponent(PlayerController).playerAmmo --;
+	AudioSource.PlayClipAtPoint(bulletShootSound, transform.position);
 }

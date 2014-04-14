@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyPawnController.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyAI.js">
     <Files>
-      <File FileName="Assets\Scripts\EnemyPawnController.js" Line="14" Column="57" />
+      <File FileName="Assets\Scripts\EnemyPawnController.js" Line="23" Column="5" />
+      <File FileName="Assets\Scripts\PlayerController.js" Line="25" Column="30" />
+      <File FileName="Assets\Scripts\EnemyAI.js" Line="32" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -5,25 +5,41 @@ var ammo : int = 20;
 var score : int = 0;
 
 @script RequireComponent(AudioSource)
-var itemCollectSound : AudioClip;
+var collectSound : AudioClip;
+var hitSound : AudioClip;
 
 function Start ()
 {
-	health = 100;
-	ammo = 10;
-	score = 0;
+	
 }
 
 function Update () 
 {
-	if (health <= 0)
-	{
-		//Debug.Log("Player is destroyed");
-	}
-	
+	showStats();
+	checkStats();
+}
+
+function showStats()
+{
 	GameObject.Find("GuiHealth").guiText.text = "Health: " + health.ToString();
 	GameObject.Find("GuiAmmo").guiText.text = "Ammo: " + ammo.ToString();
 	GameObject.Find("GuiScore").guiText.text = "Score: " + score.ToString();
+}
+
+function checkStats()
+{
+	if (health <= 0)
+	{
+		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are dead!");
+		yield WaitForSeconds(2);
+		Application.LoadLevel(2);
+	}
+	
+	if (ammo <= 0)
+	{
+		//Debug.Log("Player is out of Ammo");
+		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of Ammo");
+	}
 }
 
 function OnControllerColliderHit(c : ControllerColliderHit)
@@ -36,21 +52,21 @@ function OnControllerColliderHit(c : ControllerColliderHit)
 		Destroy(c.gameObject);
 		health = 100;
 		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText(c.gameObject.tag + " Restored!");
-		AudioSource.PlayClipAtPoint(itemCollectSound, transform.position);
+		//AudioSource.PlayClipAtPoint(collectSound, transform.position);
 	}
 	
 	if (c.gameObject.tag == "Ammo")
 	{
 		//Debug.Log("Player collected Ammo");
 		Destroy(c.gameObject);
-		ammo = 10;
+		ammo = 20;
 		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText(c.gameObject.tag + " Refilled!");
-		AudioSource.PlayClipAtPoint(itemCollectSound, transform.position);
+		//AudioSource.PlayClipAtPoint(collectSound, transform.position);
 	}
 	
 	if (c.gameObject.tag == "Enemy Pawn")
 	{
 		//Debug.Log("Player crashed into Enemy Pawn");
-		health -= 50;
+		health = 0;
 	}
 }

@@ -1,13 +1,13 @@
 #pragma strict
 
 @script RequireComponent(AudioSource)
-var enemyHitSound : AudioClip;
+var hitSound : AudioClip;
 
-var sparks : GameObject;
+var particlesPrefab : GameObject;
 
 function Start () 
 {
-
+	Destroy(gameObject, 2.5f);
 }
 
 function Update () 
@@ -17,14 +17,10 @@ function Update ()
 
 function OnCollisionEnter(other : Collision)
 {
-	//Debug.Log("Player Missle collided with "+ other.gameObject.tag);
+	//Debug.Log("Player Missle collided with "+ other.gameObject.tag)
+	
+	var particlesInstance : GameObject;
+	particlesInstance = Instantiate(particlesPrefab, transform.position, transform.rotation);
 	Destroy(gameObject);
-	
-	var sparksClone : GameObject = Instantiate(sparks, transform.position, transform.rotation);
-	
-	if (other.gameObject.tag == "Enemy Pawn")
-	{
-		AudioSource.PlayClipAtPoint(enemyHitSound, transform.position);
-		GameObject.Find("EnemyPawn").GetComponent(EnemyPawnController).health -= 100;
-	}
+	//AudioSource.PlayClipAtPoint(hitSound, transform.position);
 }

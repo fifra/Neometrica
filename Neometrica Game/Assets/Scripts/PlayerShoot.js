@@ -60,7 +60,7 @@ function shootBullet()
 		bulletInstance = Instantiate(bulletPrefab, cannon.position, cannon.rotation);
 		bulletInstance.AddForce(cannon.forward * 5000);
 		GameObject.Find("Player").GetComponent(PlayerController).ammo --;
-		//AudioSource.PlayClipAtPoint(shootSound, transform.position);
+		AudioSource.PlayClipAtPoint(shootSound, transform.position);
 	}
 }
 
@@ -73,7 +73,7 @@ function shootMissle()
 		missleInstance = Instantiate(misslePrefab, cannon.position, cannon.rotation);
 		missleInstance.AddForce(cannon.forward * 2500);
 		GameObject.Find("Player").GetComponent(PlayerController).ammo -= 5;
-		//AudioSource.PlayClipAtPoint(shootSound, transform.position);
+		AudioSource.PlayClipAtPoint(shootSound, transform.position);
 	}
 	else
 	{

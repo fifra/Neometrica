@@ -31,7 +31,7 @@ function checkStats()
 	if (health <= 0)
 	{
 		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are dead!");
-		yield WaitForSeconds(2);
+		yield WaitForSeconds(0.4);
 		Application.LoadLevel(2);
 	}
 	
@@ -61,6 +61,15 @@ function OnControllerColliderHit(c : ControllerColliderHit)
 		Destroy(c.gameObject);
 		ammo = 20;
 		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText(c.gameObject.tag + " Refilled!");
+		//AudioSource.PlayClipAtPoint(collectSound, transform.position);
+	}
+	
+	if (c.gameObject.tag == "Score")
+	{
+		//Debug.Log("Player collected Score");
+		Destroy(c.gameObject);
+		score += 10;
+		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText(c.gameObject.tag + " Boosted!");
 		//AudioSource.PlayClipAtPoint(collectSound, transform.position);
 	}
 	

@@ -1,11 +1,9 @@
 #pragma strict
 
 var weaponEquipped : int = 1;
-
 var cannon : Transform;
-
 var bulletPrefab : Rigidbody;
-
+var shootSpeed : int = 80;
 var misslePrefab : Rigidbody;
 
 @script RequireComponent(AudioSource)
@@ -58,7 +56,7 @@ function shootBullet()
 	{
 		var bulletInstance : Rigidbody;
 		bulletInstance = Instantiate(bulletPrefab, cannon.position, cannon.rotation);
-		bulletInstance.AddForce(cannon.forward * 5000);
+		bulletInstance.velocity = transform.TransformDirection(Vector3.forward * shootSpeed);
 		GameObject.Find("Player").GetComponent(PlayerController).ammo --;
 		AudioSource.PlayClipAtPoint(shootSound, transform.position);
 	}
@@ -71,7 +69,7 @@ function shootMissle()
 	{
 		var missleInstance : Rigidbody;
 		missleInstance = Instantiate(misslePrefab, cannon.position, cannon.rotation);
-		missleInstance.AddForce(cannon.forward * 2500);
+		missleInstance.velocity = transform.TransformDirection(Vector3.forward * shootSpeed);
 		GameObject.Find("Player").GetComponent(PlayerController).ammo -= 5;
 		AudioSource.PlayClipAtPoint(shootSound, transform.position);
 	}

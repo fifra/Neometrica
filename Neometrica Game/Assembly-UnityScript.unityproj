@@ -46,21 +46,24 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\Standard Particles\Legacy Particles\TimedObjectDestructor.js" />
      <Compile Include="Assets\Scripts\BulletController.js" />
      <Compile Include="Assets\Scripts\EnemyPawnController.js" />
-     <Compile Include="Assets\Scripts\FPS\CharacterMotor.js" />
-     <Compile Include="Assets\Scripts\FPS\FPSInputController.js" />
      <Compile Include="Assets\Scripts\GuiMessage.js" />
      <Compile Include="Assets\Scripts\GuiTimer.js" />
      <Compile Include="Assets\Scripts\ItemRotate.js" />
      <Compile Include="Assets\Scripts\MenuGame.js" />
      <Compile Include="Assets\Scripts\MenuRetry.js" />
      <Compile Include="Assets\Scripts\MenuStart.js" />
-     <Compile Include="Assets\Scripts\MissleController.js" />
+     <Compile Include="Assets\Scripts\MouseLook.js" />
+     <Compile Include="Assets\Scripts\PlayerActions.js" />
      <Compile Include="Assets\Scripts\PlayerController.js" />
      <Compile Include="Assets\Scripts\PlayerShoot.js" />
-     <None Include="Assets\Shaders\Particle Alpha Blend (Queue +100).shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{9BA1F21B-680A-5DA9-8098-41DC9A7147EA}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{74D17FA6-E387-B32E-3ABB-95319AD62B02}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

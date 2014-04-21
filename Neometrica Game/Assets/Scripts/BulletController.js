@@ -1,26 +1,26 @@
-#pragma strict
+﻿#pragma strict
 
 @script RequireComponent(AudioSource)
 var hitSound : AudioClip;
 
-var hitEffect : GameObject;
+var hitPrefab : GameObject;
 
 function Start () 
 {
-	Destroy(gameObject, 2.5f);
+	Destroy(gameObject, 1.5f);
 }
 
 function Update () 
 {
-
+	
 }
 
-function OnCollisionEnter(other : Collision)
+function OnTriggerEnter(other : Collider)
 {
-	//Debug.Log("Player Bullet collided with "+ other.gameObject.tag)
+	//Debug.Log("Bullet collided with "+ other.gameObject.tag)
 	Destroy(gameObject);
 	AudioSource.PlayClipAtPoint(hitSound, transform.position);
 	
-	var hitEffectInstance : GameObject;
-	hitEffectInstance = Instantiate(hitEffect, transform.position, transform.rotation);
+	var hitInstance : GameObject;
+	hitInstance= Instantiate(hitPrefab, transform.position, transform.rotation);
 }

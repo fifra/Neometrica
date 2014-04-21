@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerShoot.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BulletController.js">
     <Files>
-      <File FileName="Assets\Scripts\PlayerShoot.js" Line="34" Column="10" />
-      <File FileName="Assets\Scripts\EnemyPawnController.js" Line="95" Column="1" />
+      <File FileName="Assets\Scripts\PlayerShoot.js" Line="74" Column="63" />
+      <File FileName="Assets\Scripts\EnemyPawnController.js" Line="23" Column="34" />
+      <File FileName="Assets\Scripts\BulletController.js" Line="22" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

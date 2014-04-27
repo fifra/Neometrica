@@ -13,6 +13,7 @@ var explosionPrefab : GameObject;
 var collectSound : AudioClip;
 var hitSound : AudioClip;
 var destroyedSound : AudioClip;
+var motorSound : AudioClip;
 
 function Start ()
 {
@@ -38,18 +39,14 @@ function checkStats()
 {
 	if (health <= 0)
 	{
-		/*
-		var explosionInstance : GameObject;
-		explosionInstance = Instantiate(explosionPrefab, transform.position, transform.rotation);
-		AudioSource.PlayClipAtPoint(destroyedSound, new Vector3(5,1,2));
-		*/
+		//explode();
 		
 		GameObject.Find("Robot").renderer.enabled = false;
 		GameObject.Find("Head").renderer.enabled = false;
 		GameObject.Find("Arm").renderer.enabled = false;
 		
 		yield WaitForSeconds(2);
-		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are dead!");
+		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are destroyed!");
 		yield WaitForSeconds(2);
 		
 		Application.LoadLevel(2);
@@ -62,7 +59,14 @@ function checkStats()
 	}
 }
 
-function playerMovement ()
+function explode()
+{
+	var explosionInstance : GameObject;
+	explosionInstance = Instantiate(explosionPrefab, transform.position, transform.rotation);
+	AudioSource.PlayClipAtPoint(destroyedSound, new Vector3(5,1,2));
+}
+
+function playerMovement()
 {
 	var translation : float = Input.GetAxis("Vertical") * moveSpeed;
 	var rotation : float = Input.GetAxis("Horizontal") * rotateSpeed;
@@ -70,10 +74,18 @@ function playerMovement ()
 	translation *= Time.deltaTime;
 	rotation *= Time.deltaTime;
 	
-	transform.Translate(0, 0, translation);
-	transform.Rotate(0, rotation, 0);
+	if (Input.GetAxis("Vertical"))
+	{
+		transform.Translate(0, 0, translation);
+		//AudioSource.PlayClipAtPoint(motorSound, transform.position);
+	}
+	
+	if (Input.GetAxis("Horizontal"))
+	{
+		transform.Rotate(0, rotation, 0);
+		//AudioSource.PlayClipAtPoint(motorSound, transform.position);
+	}
 }
-
 
 function OnTriggerEnter(other : Collider)
 {

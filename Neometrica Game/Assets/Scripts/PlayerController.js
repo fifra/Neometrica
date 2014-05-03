@@ -8,6 +8,7 @@ var moveSpeed : float = 10;
 var rotateSpeed : float = 100;
 
 var explosionPrefab : GameObject;
+var shockwavePrefab : GameObject;
 
 @script RequireComponent(AudioSource)
 var collectSound : AudioClip;
@@ -15,10 +16,14 @@ var hitSound : AudioClip;
 var destroyedSound : AudioClip;
 var motorSound : AudioClip;
 
+var isExploding : boolean;
+
 function Start ()
 {
 	moveSpeed *= Time.deltaTime;
 	rotateSpeed *= Time.deltaTime;
+	isExploding = false;
+	yield explode();
 }
 
 function Update () 
@@ -26,6 +31,8 @@ function Update ()
 	showStats();
 	checkStats();
 	playerMovement();
+	playerShockwave();
+	isExploding = false;
 }
 
 function showStats()
@@ -39,7 +46,7 @@ function checkStats()
 {
 	if (health <= 0)
 	{
-		//explode();
+		isExploding = true;
 		
 		GameObject.Find("Robot").renderer.enabled = false;
 		GameObject.Find("Head").renderer.enabled = false;
@@ -57,13 +64,6 @@ function checkStats()
 		//Debug.Log("Player is out of Ammo");
 		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of Ammo");
 	}
-}
-
-function explode()
-{
-	var explosionInstance : GameObject;
-	explosionInstance = Instantiate(explosionPrefab, transform.position, transform.rotation);
-	AudioSource.PlayClipAtPoint(destroyedSound, new Vector3(5,1,2));
 }
 
 function playerMovement()
@@ -86,6 +86,7 @@ function playerMovement()
 		//AudioSource.PlayClipAtPoint(motorSound, transform.position);
 	}
 }
+
 
 function OnTriggerEnter(other : Collider)
 {
@@ -118,8 +119,8 @@ function OnTriggerEnter(other : Collider)
 	
 	if (other.gameObject.tag == "Enemy Bullet")
 	{
-		//Debug.Log("Player hit by Enemy Bullet");
-		health -= 10;
+		Debug.Log("Player hit by Enemy Bullet");
+		health -= 50;
 	}
 	
 	else if (other.gameObject.tag == "Enemy Pawn")
@@ -129,11 +130,30 @@ function OnTriggerEnter(other : Collider)
 	}
 }
 
-/*
-function OnControllerColliderHit(c : ControllerColliderHit)
-{	
-	Debug.Log("Player collided with " + c.gameObject.tag);
-	
-
+function playerShockwave()
+{
+	if (Input.GetKeyDown("e"))
+	{
+		var shockwaveInstance : GameObject;
+		shockwaveInstance = Instantiate(shockwavePrefab, transform.position, transform.rotation);
+		ammo -= 10;
+	}
 }
-*/
+
+function explode()
+{
+	while(true)
+	{
+		if (isExploding == true){
+			var explosionInstance : GameObject;
+			explosionInstance = Instantiate(explosionPrefab, transform.position, transform.rotation);
+			AudioSource.PlayClipAtPoint(destroyedSound, new Vector3(5,1,2));
+			yield WaitForSeconds(1.0);
+			Destroy(explosionInstance);
+			Debug.Log("Player exploded");
+			break;
+		}
+	yield;
+	}
+}
+

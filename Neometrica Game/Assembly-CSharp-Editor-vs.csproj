@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_1;UNITY_4_3;UNITY_64;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;UNITY_64;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,26 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\Energy Bar Toolkit\Scripts\Editor\EditorBase.cs" />
-     <Compile Include="Assets\Packages\Energy Bar Toolkit\Scripts\Editor\EnergyBarInspectorBase.cs" />
-     <Compile Include="Assets\Packages\Energy Bar Toolkit\Scripts\Editor\EnergyBarRendererInspector.cs" />
-     <Compile Include="Assets\Packages\Energy Bar Toolkit\Scripts\Editor\EnergyBarRepeatRendererInspector.cs" />
-     <Compile Include="Assets\Packages\Energy Bar Toolkit\Scripts\Editor\EnergyBarSequenceRendererInspector.cs" />
-     <Compile Include="Assets\Packages\Energy Bar Toolkit\Scripts\Editor\EnergyBarTransformRendererInspector.cs" />
-     <Compile Include="Assets\Packages\Energy Bar Toolkit\Scripts\Editor\SimpleEventInspector.cs" />
-     <Compile Include="Assets\Packages\Energy Bar Toolkit\Scripts\MadCommons\Editor\MadAssets.cs" />
-     <Compile Include="Assets\Packages\Energy Bar Toolkit\Scripts\MadCommons\Editor\MadGUI.cs" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\ExpandFillShaderPre.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\UnlitShaderPre.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\RadialFillShaderPre.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\VerticalFillShader.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\HorizontalFillShaderPre.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\RadialFillShader.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\UnlitShader.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\ExpandFillShader.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\VerticalFillShaderPre.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\Resources\Shaders\HorizontalFillShader.shader" />
-     <None Include="Assets\Packages\Energy Bar Toolkit\README.txt" />
+     <Compile Include="Assets\VectorGrid\Editor\VectorGridEditor.cs" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
  </Reference>

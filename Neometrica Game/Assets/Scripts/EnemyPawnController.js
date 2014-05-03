@@ -6,7 +6,7 @@ var bulletPrefab : Rigidbody;
 var cannon : Transform;
 
 var moveSpeed : float = 6.0;
-var shootSpeed : int = 80;
+var shootSpeed : int = 20;
 private var distance : float;
 var target : Transform;
 var attackRange = 30.0;
@@ -97,6 +97,12 @@ function OnTriggerEnter(other : Collider)
 	else if (other.gameObject.tag == "Player")
 	{
 		//Debug.Log("Enemy Pawn crashed into Player");
+		health -= 100;
+	}
+	
+	else if (other.gameObject.tag == "Player Shockwave")
+	{
+		Debug.Log("Enemy Pawn crashed into Player Shield");
 		health -= 100;
 	}
 }

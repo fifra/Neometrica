@@ -11,20 +11,31 @@ public class VectorGridForce : MonoBehaviour
 	public Color m_Color = Color.white;
 	public bool m_HasColor;
 
+	public bool canShockwave = false;
+
+	public void enableShockwave(bool param)
+	{
+
+		canShockwave = param;
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown("e"))
+
+		if (Input.GetKeyDown (KeyCode.E)) 
 		{
-			if(m_VectorGrid)
+			if (canShockwave == true)
 			{
-				if(m_Directional)
+				if (m_VectorGrid)
 				{
-					m_VectorGrid.AddGridForce(this.transform.position, m_ForceDirection * m_ForceScale, m_Radius, m_Color, m_HasColor);
-				}
-				else
-				{
-					m_VectorGrid.AddGridForce(this.transform.position, m_ForceScale, m_Radius, m_Color, m_HasColor);
+					if (m_Directional) 
+					{
+							m_VectorGrid.AddGridForce (this.transform.position, m_ForceDirection * m_ForceScale, m_Radius, m_Color, m_HasColor);
+					} else 
+					{
+							m_VectorGrid.AddGridForce (this.transform.position, m_ForceScale, m_Radius, m_Color, m_HasColor);
+					}
 				}
 			}
 		}

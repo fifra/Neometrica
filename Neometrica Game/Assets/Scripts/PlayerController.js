@@ -4,6 +4,8 @@ var health : int = 100;
 var ammo : int = 20;
 var score : int = 0;
 
+var canShockwave : boolean;
+
 var moveSpeed : float = 10;
 var rotateSpeed : float = 100;
 
@@ -16,14 +18,14 @@ var hitSound : AudioClip;
 var destroyedSound : AudioClip;
 var motorSound : AudioClip;
 
-var isExploding : boolean;
+var isExploding : boolean = false;
 
 function Start ()
 {
 	moveSpeed *= Time.deltaTime;
 	rotateSpeed *= Time.deltaTime;
-	isExploding = false;
 	yield explode();
+
 }
 
 function Update () 
@@ -32,7 +34,6 @@ function Update ()
 	checkStats();
 	playerMovement();
 	playerShockwave();
-	isExploding = false;
 }
 
 function showStats()
@@ -62,7 +63,19 @@ function checkStats()
 	if (ammo <= 0)
 	{
 		//Debug.Log("Player is out of Ammo");
-		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of Ammo");
+		canShockwave = false;
+		if (Input.GetButtonDown("Fire1"))
+		{
+			GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of Ammo");
+		}
+		else if (Input.GetKeyDown("e"))
+		{
+			GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of Ammo");
+		}
+	}
+	else
+	{
+		canShockwave = true;
 	}
 }
 
@@ -132,11 +145,19 @@ function OnTriggerEnter(other : Collider)
 
 function playerShockwave()
 {
-	if (Input.GetKeyDown("e"))
+	if (canShockwave == true)
 	{
-		var shockwaveInstance : GameObject;
-		shockwaveInstance = Instantiate(shockwavePrefab, transform.position, transform.rotation);
-		ammo -= 10;
+		if (Input.GetKeyDown("e"))
+		{
+			var shockwaveInstance : GameObject;
+			shockwaveInstance = Instantiate(shockwavePrefab, transform.position, transform.rotation);
+			ammo -= 10;
+			SendMessage("enableShockwave",true);
+			
+		}
+	}
+	else{
+		SendMessage("enableShockwave",false);
 	}
 }
 

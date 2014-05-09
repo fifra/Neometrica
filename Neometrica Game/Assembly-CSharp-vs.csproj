@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Packages\Scripts\General Scripts\ActivateTrigger.cs" />
-     <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\VectorGrid\Demo\Scripts\InteractDemoManager.cs" />
      <Compile Include="Assets\VectorGrid\Demo\Scripts\ScrollDemoManager.cs" />
      <Compile Include="Assets\VectorGrid\Demo\Scripts\SphereDemoManager.cs" />

@@ -46,7 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\VectorGrid\Editor\VectorGridEditor.cs" />
+     <Compile Include="Assets\Packages\VectorGrid\Editor\VectorGridEditor.cs" />
+     <None Include="Assets\Packages\PickupItems\Shader\PickupShader.shader" />
+     <None Include="Assets\Packages\PickupItems\Shader\HighlightAdditive.shader" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
  </Reference>

@@ -46,24 +46,26 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Packages\PickupItems\scenes\gallery_script.js" />
      <Compile Include="Assets\Packages\Scripts\Camera Scripts\MouseOrbit.js" />
      <Compile Include="Assets\Packages\Scripts\Camera Scripts\SmoothFollow.js" />
      <Compile Include="Assets\Packages\Scripts\Camera Scripts\SmoothLookAt.js" />
      <Compile Include="Assets\Packages\Scripts\General Scripts\DragRigidbody.js" />
-     <Compile Include="Assets\Scripts\BulletController.js" />
-     <Compile Include="Assets\Scripts\EnemyPawnController.js" />
+     <Compile Include="Assets\Scripts\BulletBehaviour.js" />
+     <Compile Include="Assets\Scripts\EnemyBehaviour.js" />
+     <Compile Include="Assets\Scripts\FinaleProgress.js" />
+     <Compile Include="Assets\Scripts\GameProgress.js" />
      <Compile Include="Assets\Scripts\GuiMessage.js" />
      <Compile Include="Assets\Scripts\GuiTimer.js" />
-     <Compile Include="Assets\Scripts\ItemRotate.js" />
-     <Compile Include="Assets\Scripts\MenuGame.js" />
+     <Compile Include="Assets\Scripts\MenuDifficulty.js" />
      <Compile Include="Assets\Scripts\MenuRetry.js" />
      <Compile Include="Assets\Scripts\MenuStart.js" />
      <Compile Include="Assets\Scripts\MouseLook.js" />
-     <Compile Include="Assets\Scripts\PlayerActions.js" />
      <Compile Include="Assets\Scripts\PlayerController.js" />
-     <Compile Include="Assets\Scripts\PlayerExplosion.js" />
-     <Compile Include="Assets\Scripts\PlayerShockwave.js" />
-     <Compile Include="Assets\Scripts\PlayerShoot.js" />
+     <Compile Include="Assets\Scripts\Rotate.js" />
+     <Compile Include="Assets\Scripts\ShockwaveBehaviour.js" />
+     <None Include="Assets\Packages\PickupItems\Shader\PickupShader.shader" />
+     <None Include="Assets\Packages\PickupItems\Shader\HighlightAdditive.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

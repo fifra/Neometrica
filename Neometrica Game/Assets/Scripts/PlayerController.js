@@ -1,105 +1,50 @@
 #pragma strict
+@script RequireComponent(AudioSource)
 
+var hasHealth : boolean = true;
 var health : int = 100;
-var ammo : int = 20;
-var score : int = 0;
 
-var canShockwave : boolean;
+var hasAmmo : boolean = true;
+var ammo : int = 20;
+
+var hasProgress : boolean = true;
+var progress : int = 0;
 
 var moveSpeed : float = 10;
 var rotateSpeed : float = 100;
 
-var explosionPrefab : GameObject;
-var shockwavePrefab : GameObject;
+var canShoot : boolean = true;
+var weaponEquipped : int = 1;
+var cannon : Transform;
+var bullet : Rigidbody;
+var missle : Rigidbody;
 
-@script RequireComponent(AudioSource)
-var collectSound : AudioClip;
-var hitSound : AudioClip;
-var destroyedSound : AudioClip;
-var motorSound : AudioClip;
+var canShockwave : boolean = true;
+var shockwave : GameObject;
 
+var explosion : GameObject;
 var isExploding : boolean = false;
+
+var collectSound : AudioClip;
+var deathSound : AudioClip;
+var moveSound : AudioClip;
 
 function Start ()
 {
-	moveSpeed *= Time.deltaTime;
-	rotateSpeed *= Time.deltaTime;
-	yield explode();
-
+	Screen.showCursor = false;
+	yield Explode();
 }
 
 function Update () 
 {
-	showStats();
-	checkStats();
-	playerMovement();
-	playerShockwave();
+	ShowStats();
+	CheckHealth();
+	CheckAmmo();
+	Move();
+	SwitchWeapon();
+	Shoot();
+	Shockwave();
 }
-
-function showStats()
-{
-	GameObject.Find("GuiHealth").guiText.text = "Health: " + health.ToString();
-	GameObject.Find("GuiAmmo").guiText.text = "Ammo: " + ammo.ToString();
-	GameObject.Find("GuiScore").guiText.text = "Score: " + score.ToString();
-}
-
-function checkStats()
-{
-	if (health <= 0)
-	{
-		isExploding = true;
-		
-		GameObject.Find("Robot").renderer.enabled = false;
-		GameObject.Find("Head").renderer.enabled = false;
-		GameObject.Find("Arm").renderer.enabled = false;
-		
-		yield WaitForSeconds(2);
-		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are destroyed!");
-		yield WaitForSeconds(2);
-		
-		Application.LoadLevel(2);
-	}
-	
-	if (ammo <= 0)
-	{
-		//Debug.Log("Player is out of Ammo");
-		canShockwave = false;
-		if (Input.GetButtonDown("Fire1"))
-		{
-			GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of Ammo");
-		}
-		else if (Input.GetKeyDown("e"))
-		{
-			GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of Ammo");
-		}
-	}
-	else
-	{
-		canShockwave = true;
-	}
-}
-
-function playerMovement()
-{
-	var translation : float = Input.GetAxis("Vertical") * moveSpeed;
-	var rotation : float = Input.GetAxis("Horizontal") * rotateSpeed;
-	
-	translation *= Time.deltaTime;
-	rotation *= Time.deltaTime;
-	
-	if (Input.GetAxis("Vertical"))
-	{
-		transform.Translate(0, 0, translation);
-		//AudioSource.PlayClipAtPoint(motorSound, transform.position);
-	}
-	
-	if (Input.GetAxis("Horizontal"))
-	{
-		transform.Rotate(0, rotation, 0);
-		//AudioSource.PlayClipAtPoint(motorSound, transform.position);
-	}
-}
-
 
 function OnTriggerEnter(other : Collider)
 {
@@ -121,54 +66,220 @@ function OnTriggerEnter(other : Collider)
 		AudioSource.PlayClipAtPoint(collectSound, transform.position);
 	}
 	
-	if (other.gameObject.tag == "Score")
+	if (other.gameObject.tag == "Star")
 	{
-		//Debug.Log("Player collected Score");
+		//Debug.Log("Player collected Star");
 		Destroy(other.gameObject);
-		score += 10;
-		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText(other.gameObject.tag + " Boosted!");
+		progress += 1;
+		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText(other.gameObject.tag + " Collected!");
 		AudioSource.PlayClipAtPoint(collectSound, transform.position);
 	}
 	
 	if (other.gameObject.tag == "Enemy Bullet")
 	{
-		Debug.Log("Player hit by Enemy Bullet");
-		health -= 50;
+		//Debug.Log("Player hit by Enemy Bullet");
+		if (hasHealth)
+		{
+			health -= 10;
+		}
+		
 	}
 	
-	else if (other.gameObject.tag == "Enemy Pawn")
+	if (other.gameObject.tag == "Enemy Pawn")
 	{
 		//Debug.Log("Player crashed into Enemy Pawn");
-		health = 0;
-	}
-}
-
-function playerShockwave()
-{
-	if (canShockwave == true)
-	{
-		if (Input.GetKeyDown("e"))
+		if (hasHealth)
 		{
-			var shockwaveInstance : GameObject;
-			shockwaveInstance = Instantiate(shockwavePrefab, transform.position, transform.rotation);
-			ammo -= 10;
-			SendMessage("enableShockwave",true);
-			
+			health -= 50;
 		}
 	}
-	else{
-		SendMessage("enableShockwave",false);
+	
+	if (other.gameObject.tag == "Enemy King")
+	{
+		//Debug.Log("Player crashed into Enemy Pawn");
+		if (hasHealth)
+		{
+			health = 0;
+		}
+	}
+	
+	if (other.gameObject.tag == "Wall")
+	{
+		//Debug.Log("Player crashed into Wall");
+		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of bounds!");
 	}
 }
 
-function explode()
+function ShowStats()
+{
+	if (hasHealth)
+	{
+		GameObject.Find("GuiHealth").guiText.text = "Health: " + health.ToString();
+	}
+	
+	if (hasAmmo)
+	{
+		GameObject.Find("GuiAmmo").guiText.text = "Ammo: " + ammo.ToString();
+	}
+	
+	if (hasProgress)
+	{
+		GameObject.Find("GuiProgress").guiText.text = "Stars Collected: " + progress.ToString() + "/4";
+	}
+}
+
+function CheckHealth()
+{
+	if (health <= 0)
+	{
+		health = 0;
+		isExploding = true;	
+		DisableRenderers();
+		
+		yield WaitForSeconds(2);
+		GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are dead!");
+		
+		yield WaitForSeconds(2);
+		Application.LoadLevel(2);
+	}
+}
+
+function CheckAmmo()
+{	
+	if (ammo <= 0)
+	{
+		//Debug.Log("Player is out of Ammo");
+		ammo = 0;
+		canShoot = false;
+		canShockwave = false;
+	}
+	else
+	{
+		canShoot = true;
+		canShockwave = true;
+	}
+}
+
+function Move()
+{
+	var translation : float = Input.GetAxis("Vertical") * moveSpeed;
+	var rotation : float = Input.GetAxis("Horizontal") * rotateSpeed;
+	
+	translation *= Time.deltaTime;
+	rotation *= Time.deltaTime;
+	
+	if (Input.GetAxis("Vertical"))
+	{
+		transform.Translate(0, 0, translation);
+		//AudioSource.PlayClipAtPoint(motorSound, transform.position);
+	}
+	
+	if (Input.GetAxis("Horizontal"))
+	{
+		transform.Rotate(0, rotation, 0);
+		//AudioSource.PlayClipAtPoint(motorSound, transform.position);
+	}
+}
+
+function Shoot()
+{
+	if (Input.GetButtonDown("Fire1"))
+	{
+		if (canShoot)
+		{
+			switch(weaponEquipped)
+			{
+				case 0:
+				ShootMissle();
+				break;
+				
+				case 1:
+				ShootBullet();
+				break;
+			}
+		}
+		else
+		{
+			GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of Ammo");
+		}
+	}
+}
+
+function ShootBullet()
+{
+	//Debug.Log("Player shot Bullet");
+	{
+		var bulletInstance : Rigidbody;
+		bulletInstance = Instantiate(bullet, cannon.position, cannon.rotation);
+		if (hasAmmo)
+		{
+			ammo -= 1;
+		}
+	}
+}
+
+function ShootMissle()
+{
+	//Debug.Log("Player shot Missle");
+	{
+		var missleInstance : Rigidbody;
+		missleInstance = Instantiate(missle, cannon.position, cannon.rotation);
+		if (hasAmmo)
+		{
+			ammo -= 5;
+		}
+	}
+}
+
+function SwitchWeapon()
+{
+	if (Input.GetKeyDown("left alt"))
+	{
+		switch(weaponEquipped)
+		{
+			case 0:
+			weaponEquipped = 1;
+			//Debug.Log("Player changed weapon to Bullet");
+			break;
+			
+			case 1:
+			weaponEquipped = 0;
+			//Debug.Log("Player changed weapon to Missle");
+			break;
+		}
+	}
+}
+
+function Shockwave()
+{
+	if (Input.GetKeyDown("e"))
+	{
+		if (canShockwave)
+		{
+			var shockwaveInstance : GameObject;
+			shockwaveInstance = Instantiate(shockwave, transform.position, transform.rotation);
+			SendMessage("enableShockwave",true);
+			if (hasAmmo)
+			{
+				ammo -= 10;
+			}
+		}
+		else
+		{
+			GameObject.Find("GuiMessage").GetComponent(GuiMessage).displayText("You are out of Ammo");
+			SendMessage("enableShockwave", false);
+		}
+	}
+}
+
+function Explode()
 {
 	while(true)
 	{
-		if (isExploding == true){
+		if (isExploding){
 			var explosionInstance : GameObject;
-			explosionInstance = Instantiate(explosionPrefab, transform.position, transform.rotation);
-			AudioSource.PlayClipAtPoint(destroyedSound, new Vector3(5,1,2));
+			explosionInstance = Instantiate(explosion, transform.position, transform.rotation);
+			AudioSource.PlayClipAtPoint(deathSound, new Vector3(5,1,2));
 			yield WaitForSeconds(1.0);
 			Destroy(explosionInstance);
 			Debug.Log("Player exploded");
@@ -178,3 +289,12 @@ function explode()
 	}
 }
 
+function DisableRenderers()
+{
+	var renderers : Renderer[];
+	renderers = GetComponentsInChildren.<Renderer>();
+	for (var renderer : Renderer in renderers) 
+	{
+	    renderer.enabled = false;
+	}
+}

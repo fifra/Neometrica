@@ -47,14 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Packages\Scripts\General Scripts\ActivateTrigger.cs" />
-     <Compile Include="Assets\VectorGrid\Demo\Scripts\InteractDemoManager.cs" />
-     <Compile Include="Assets\VectorGrid\Demo\Scripts\ScrollDemoManager.cs" />
-     <Compile Include="Assets\VectorGrid\Demo\Scripts\SphereDemoManager.cs" />
-     <Compile Include="Assets\VectorGrid\Demo\Scripts\VectorGridDemoFireObject.cs" />
-     <Compile Include="Assets\VectorGrid\Scripts\VectorGrid.cs" />
-     <Compile Include="Assets\VectorGrid\Scripts\VectorGridForce.cs" />
-     <Compile Include="Assets\VectorGrid\Scripts\VectorGridPoint.cs" />
-     <Compile Include="Assets\VectorGrid\Scripts\VectorGridSpring.cs" />
+     <Compile Include="Assets\Packages\VectorGrid\Demo\Scripts\InteractDemoManager.cs" />
+     <Compile Include="Assets\Packages\VectorGrid\Demo\Scripts\ScrollDemoManager.cs" />
+     <Compile Include="Assets\Packages\VectorGrid\Demo\Scripts\SphereDemoManager.cs" />
+     <Compile Include="Assets\Packages\VectorGrid\Demo\Scripts\VectorGridDemoFireObject.cs" />
+     <Compile Include="Assets\Packages\VectorGrid\Scripts\VectorGrid.cs" />
+     <Compile Include="Assets\Packages\VectorGrid\Scripts\VectorGridForce.cs" />
+     <Compile Include="Assets\Packages\VectorGrid\Scripts\VectorGridPoint.cs" />
+     <Compile Include="Assets\Packages\VectorGrid\Scripts\VectorGridSpring.cs" />
+     <None Include="Assets\Packages\PickupItems\Shader\PickupShader.shader" />
+     <None Include="Assets\Packages\PickupItems\Shader\HighlightAdditive.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

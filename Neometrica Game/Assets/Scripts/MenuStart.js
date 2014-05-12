@@ -9,7 +9,7 @@ function Update ()
 {
 	if (Input.GetKey("space")) 
 	{
-		Application.LoadLevel(1);
+		Application.LoadLevel(5);
 	}
 
 	// Make the second button.

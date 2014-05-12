@@ -1,0 +1,726 @@
+fileFormatVersion: 2
+guid: 45996295c23e9e147a59d9fffebdb081
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: armMechPivotBottom
+    100002: armMechPivotBottom 1
+    100004: armMechPivotMiddle
+    100006: armMechPivotMiddle 1
+    100008: armMechPivotTop
+    100010: armMechPivotTop 1
+    100012: backSpine
+    100014: backSpinePlates
+    100016: bodyRing1
+    100018: bodyRing2
+    100020: bodyRing3
+    100022: bottomBodyChain1
+    100024: bottomBodyChain2
+    100026: head
+    100028: head 1
+    100030: headShell
+    100032: headShellPanel
+    100034: headShellPanelNeon
+    100036: headShellShield
+    100038: headTip
+    100040: leftArm
+    100042: leftArm 1
+    100044: leftArmElbow
+    100046: leftArmShell
+    100048: leftArmShellChain
+    100050: leftEar
+    100052: leftEarNeon
+    100054: leftEarPlate1
+    100056: leftEye
+    100058: leftEyeNeon
+    100060: leftForeArm
+    100062: leftForeArm 1
+    100064: leftForeArmShell
+    100066: leftForeArmShellChain
+    100068: leftForeArmShellChainNeon
+    100070: leftForeArmWrist
+    100072: leftForeIndexFinger
+    100074: leftForeIndexFinger 1
+    100076: leftForeIndexFingerShell
+    100078: leftForeIndexFingerTip
+    100080: leftForeIndexFingerTip 1
+    100082: leftForeMiddleFinger
+    100084: leftForeMiddleFinger 1
+    100086: leftForeMiddleFingerShell
+    100088: leftForeMiddleFingerTip
+    100090: leftForePinkyFinger
+    100092: leftForePinkyFinger 1
+    100094: leftForePinkyFingerShell
+    100096: leftForePinkyFingerTip
+    100098: leftForeRingeFinger
+    100100: leftForeRingeFinger 1
+    100102: leftForeRingeFingerShell
+    100104: leftForeRingeFingerTip
+    100106: leftForeThumbFinger
+    100108: leftForeThumbFinger 1
+    100110: leftForeThumbFingerShell
+    100112: leftHand
+    100114: leftHand 1
+    100116: leftHandPalm
+    100118: leftHandPalmShell
+    100120: leftIndexFinger
+    100122: leftIndexFinger 1
+    100124: leftIndexFingerHolder
+    100126: leftIndexFingerShell
+    100128: leftMiddleFinger
+    100130: leftMiddleFinger 1
+    100132: leftMiddleFingerHolder
+    100134: leftMiddleFingerShell
+    100136: leftPinkyFinger
+    100138: leftPinkyFinger 1
+    100140: leftPinkyFingerHolder
+    100142: leftPinkyFingerShell
+    100144: leftRingFinger
+    100146: leftRingFinger 1
+    100148: leftRingFingerHolder
+    100150: leftRingFingerShell
+    100152: leftShoulderPad
+    100154: leftShoulderPadNeon
+    100156: leftThumbFinger
+    100158: leftThumbFinger 1
+    100160: leftThumbFingerHolder
+    100162: leftThumbFingerShell
+    100164: lightArmShellChainNeon
+    100166: pelvis
+    100168: pelvis 1
+    100170: pelvisChains
+    100172: pelvisRotorBottom
+    100174: pelvisRotorBottomNeon
+    100176: pelvisRotorTop
+    100178: pelvisRotorTopNeon
+    100180: pelvisTip
+    100182: rightArm
+    100184: rightArm 1
+    100186: rightArmElbow
+    100188: rightArmShell
+    100190: rightArmShellChain
+    100192: rightArmShellChainNeon
+    100194: rightEar
+    100196: rightEarNeon
+    100198: rightEarPlate1
+    100200: rightEye
+    100202: rightEyeNeon
+    100204: rightForeArm
+    100206: rightForeArm 1
+    100208: rightForeArmHelixShell
+    100210: rightForeArmHelixShellChain
+    100212: rightForeArmHelixShellChainNeon
+    100214: rightForeArmWrist
+    100216: rightForeIndexFinger
+    100218: rightForeIndexFinger 1
+    100220: rightForeIndexFingerShell
+    100222: rightForeIndexFingerTip
+    100224: rightForeMiddleFinger
+    100226: rightForeMiddleFinger 1
+    100228: rightForeMiddleFingerShell
+    100230: rightForeMiddleFingerTip
+    100232: rightForePinkyFinger
+    100234: rightForePinkyFinger 1
+    100236: rightForePinkyFingerShell
+    100238: rightForePinkyFingerTip
+    100240: rightForeRingFinger
+    100242: rightForeRingFinger 1
+    100244: rightForeRingFingerShell
+    100246: rightForeRingFingerTip
+    100248: rightForeThumbFinger
+    100250: rightForeThumbFinger 1
+    100252: rightForeThumbFingerShell
+    100254: rightForeThumbFingerTip
+    100256: rightHand
+    100258: rightHand 1
+    100260: rightHandPalm
+    100262: rightHandPalmShell
+    100264: rightIndexFinger
+    100266: rightIndexFinger 1
+    100268: rightIndexFingerHolder
+    100270: rightIndexFingerShell
+    100272: rightMiddleFinger
+    100274: rightMiddleFinger 1
+    100276: rightMiddleFingerHolder
+    100278: rightMiddleFingerShell
+    100280: rightPinkyFinger
+    100282: rightPinkyFinger 1
+    100284: rightPinkyFingerHolder
+    100286: rightPinkyFingerShell
+    100288: rightRingFinger
+    100290: rightRingFinger 1
+    100292: rightRingFingerHolder
+    100294: rightRingFingerShell
+    100296: rightShoulder
+    100298: rightShoulderPad
+    100300: rightShoulderPadNeon
+    100302: rightThumbFinger
+    100304: rightThumbFinger 1
+    100306: rightThumbFingerHolder
+    100308: rightThumbFingerShell
+    100310: //RootNode
+    100312: root
+    100314: torso
+    100316: torsoGuard
+    100318: torsoHelix
+    100320: waistNeonRings
+    400000: armMechPivotBottom
+    400002: armMechPivotBottom 1
+    400004: armMechPivotMiddle
+    400006: armMechPivotMiddle 1
+    400008: armMechPivotTop
+    400010: armMechPivotTop 1
+    400012: backSpine
+    400014: backSpinePlates
+    400016: bodyRing1
+    400018: bodyRing2
+    400020: bodyRing3
+    400022: bottomBodyChain1
+    400024: bottomBodyChain2
+    400026: head
+    400028: head 1
+    400030: headShell
+    400032: headShellPanel
+    400034: headShellPanelNeon
+    400036: headShellShield
+    400038: headTip
+    400040: leftArm
+    400042: leftArm 1
+    400044: leftArmElbow
+    400046: leftArmShell
+    400048: leftArmShellChain
+    400050: leftEar
+    400052: leftEarNeon
+    400054: leftEarPlate1
+    400056: leftEye
+    400058: leftEyeNeon
+    400060: leftForeArm
+    400062: leftForeArm 1
+    400064: leftForeArmShell
+    400066: leftForeArmShellChain
+    400068: leftForeArmShellChainNeon
+    400070: leftForeArmWrist
+    400072: leftForeIndexFinger
+    400074: leftForeIndexFinger 1
+    400076: leftForeIndexFingerShell
+    400078: leftForeIndexFingerTip
+    400080: leftForeIndexFingerTip 1
+    400082: leftForeMiddleFinger
+    400084: leftForeMiddleFinger 1
+    400086: leftForeMiddleFingerShell
+    400088: leftForeMiddleFingerTip
+    400090: leftForePinkyFinger
+    400092: leftForePinkyFinger 1
+    400094: leftForePinkyFingerShell
+    400096: leftForePinkyFingerTip
+    400098: leftForeRingeFinger
+    400100: leftForeRingeFinger 1
+    400102: leftForeRingeFingerShell
+    400104: leftForeRingeFingerTip
+    400106: leftForeThumbFinger
+    400108: leftForeThumbFinger 1
+    400110: leftForeThumbFingerShell
+    400112: leftHand
+    400114: leftHand 1
+    400116: leftHandPalm
+    400118: leftHandPalmShell
+    400120: leftIndexFinger
+    400122: leftIndexFinger 1
+    400124: leftIndexFingerHolder
+    400126: leftIndexFingerShell
+    400128: leftMiddleFinger
+    400130: leftMiddleFinger 1
+    400132: leftMiddleFingerHolder
+    400134: leftMiddleFingerShell
+    400136: leftPinkyFinger
+    400138: leftPinkyFinger 1
+    400140: leftPinkyFingerHolder
+    400142: leftPinkyFingerShell
+    400144: leftRingFinger
+    400146: leftRingFinger 1
+    400148: leftRingFingerHolder
+    400150: leftRingFingerShell
+    400152: leftShoulderPad
+    400154: leftShoulderPadNeon
+    400156: leftThumbFinger
+    400158: leftThumbFinger 1
+    400160: leftThumbFingerHolder
+    400162: leftThumbFingerShell
+    400164: lightArmShellChainNeon
+    400166: pelvis
+    400168: pelvis 1
+    400170: pelvisChains
+    400172: pelvisRotorBottom
+    400174: pelvisRotorBottomNeon
+    400176: pelvisRotorTop
+    400178: pelvisRotorTopNeon
+    400180: pelvisTip
+    400182: rightArm
+    400184: rightArm 1
+    400186: rightArmElbow
+    400188: rightArmShell
+    400190: rightArmShellChain
+    400192: rightArmShellChainNeon
+    400194: rightEar
+    400196: rightEarNeon
+    400198: rightEarPlate1
+    400200: rightEye
+    400202: rightEyeNeon
+    400204: rightForeArm
+    400206: rightForeArm 1
+    400208: rightForeArmHelixShell
+    400210: rightForeArmHelixShellChain
+    400212: rightForeArmHelixShellChainNeon
+    400214: rightForeArmWrist
+    400216: rightForeIndexFinger
+    400218: rightForeIndexFinger 1
+    400220: rightForeIndexFingerShell
+    400222: rightForeIndexFingerTip
+    400224: rightForeMiddleFinger
+    400226: rightForeMiddleFinger 1
+    400228: rightForeMiddleFingerShell
+    400230: rightForeMiddleFingerTip
+    400232: rightForePinkyFinger
+    400234: rightForePinkyFinger 1
+    400236: rightForePinkyFingerShell
+    400238: rightForePinkyFingerTip
+    400240: rightForeRingFinger
+    400242: rightForeRingFinger 1
+    400244: rightForeRingFingerShell
+    400246: rightForeRingFingerTip
+    400248: rightForeThumbFinger
+    400250: rightForeThumbFinger 1
+    400252: rightForeThumbFingerShell
+    400254: rightForeThumbFingerTip
+    400256: rightHand
+    400258: rightHand 1
+    400260: rightHandPalm
+    400262: rightHandPalmShell
+    400264: rightIndexFinger
+    400266: rightIndexFinger 1
+    400268: rightIndexFingerHolder
+    400270: rightIndexFingerShell
+    400272: rightMiddleFinger
+    400274: rightMiddleFinger 1
+    400276: rightMiddleFingerHolder
+    400278: rightMiddleFingerShell
+    400280: rightPinkyFinger
+    400282: rightPinkyFinger 1
+    400284: rightPinkyFingerHolder
+    400286: rightPinkyFingerShell
+    400288: rightRingFinger
+    400290: rightRingFinger 1
+    400292: rightRingFingerHolder
+    400294: rightRingFingerShell
+    400296: rightShoulder
+    400298: rightShoulderPad
+    400300: rightShoulderPadNeon
+    400302: rightThumbFinger
+    400304: rightThumbFinger 1
+    400306: rightThumbFingerHolder
+    400308: rightThumbFingerShell
+    400310: //RootNode
+    400312: root
+    400314: torso
+    400316: torsoGuard
+    400318: torsoHelix
+    400320: waistNeonRings
+    2300000: armMechPivotBottom
+    2300002: armMechPivotBottom 1
+    2300004: armMechPivotMiddle
+    2300006: armMechPivotMiddle 1
+    2300008: armMechPivotTop
+    2300010: armMechPivotTop 1
+    2300012: backSpine
+    2300014: backSpinePlates
+    2300016: bodyRing1
+    2300018: bodyRing2
+    2300020: bodyRing3
+    2300022: bottomBodyChain1
+    2300024: bottomBodyChain2
+    2300026: head 1
+    2300028: headShell
+    2300030: headShellPanel
+    2300032: headShellPanelNeon
+    2300034: headShellShield
+    2300036: leftArm 1
+    2300038: leftArmShell
+    2300040: leftArmShellChain
+    2300042: leftEar
+    2300044: leftEarNeon
+    2300046: leftEarPlate1
+    2300048: leftEye
+    2300050: leftEyeNeon
+    2300052: leftForeArm 1
+    2300054: leftForeArmShell
+    2300056: leftForeArmShellChain
+    2300058: leftForeArmShellChainNeon
+    2300060: leftForeArmWrist
+    2300062: leftForeIndexFinger 1
+    2300064: leftForeIndexFingerShell
+    2300066: leftForeMiddleFinger 1
+    2300068: leftForeMiddleFingerShell
+    2300070: leftForePinkyFinger 1
+    2300072: leftForePinkyFingerShell
+    2300074: leftForeRingeFinger 1
+    2300076: leftForeRingeFingerShell
+    2300078: leftForeThumbFinger 1
+    2300080: leftForeThumbFingerShell
+    2300082: leftHand 1
+    2300084: leftHandPalm
+    2300086: leftHandPalmShell
+    2300088: leftIndexFinger 1
+    2300090: leftIndexFingerHolder
+    2300092: leftIndexFingerShell
+    2300094: leftMiddleFinger 1
+    2300096: leftMiddleFingerHolder
+    2300098: leftMiddleFingerShell
+    2300100: leftPinkyFinger 1
+    2300102: leftPinkyFingerHolder
+    2300104: leftPinkyFingerShell
+    2300106: leftRingFinger 1
+    2300108: leftRingFingerHolder
+    2300110: leftRingFingerShell
+    2300112: leftShoulderPad
+    2300114: leftShoulderPadNeon
+    2300116: leftThumbFinger 1
+    2300118: leftThumbFingerHolder
+    2300120: leftThumbFingerShell
+    2300122: lightArmShellChainNeon
+    2300124: pelvis 1
+    2300126: pelvisRotorBottom
+    2300128: pelvisRotorBottomNeon
+    2300130: pelvisRotorTop
+    2300132: pelvisRotorTopNeon
+    2300134: rightArm 1
+    2300136: rightArmShell
+    2300138: rightArmShellChain
+    2300140: rightArmShellChainNeon
+    2300142: rightEar
+    2300144: rightEarNeon
+    2300146: rightEarPlate1
+    2300148: rightEye
+    2300150: rightEyeNeon
+    2300152: rightForeArm 1
+    2300154: rightForeArmHelixShell
+    2300156: rightForeArmHelixShellChain
+    2300158: rightForeArmHelixShellChainNeon
+    2300160: rightForeArmWrist
+    2300162: rightForeIndexFinger 1
+    2300164: rightForeIndexFingerShell
+    2300166: rightForeMiddleFinger 1
+    2300168: rightForeMiddleFingerShell
+    2300170: rightForePinkyFinger 1
+    2300172: rightForePinkyFingerShell
+    2300174: rightForeRingFinger 1
+    2300176: rightForeRingFingerShell
+    2300178: rightForeThumbFinger 1
+    2300180: rightForeThumbFingerShell
+    2300182: rightHand 1
+    2300184: rightHandPalm
+    2300186: rightHandPalmShell
+    2300188: rightIndexFinger 1
+    2300190: rightIndexFingerHolder
+    2300192: rightIndexFingerShell
+    2300194: rightMiddleFinger 1
+    2300196: rightMiddleFingerHolder
+    2300198: rightMiddleFingerShell
+    2300200: rightPinkyFinger 1
+    2300202: rightPinkyFingerHolder
+    2300204: rightPinkyFingerShell
+    2300206: rightRingFinger 1
+    2300208: rightRingFingerHolder
+    2300210: rightRingFingerShell
+    2300212: rightShoulder
+    2300214: rightShoulderPad
+    2300216: rightShoulderPadNeon
+    2300218: rightThumbFinger 1
+    2300220: rightThumbFingerHolder
+    2300222: rightThumbFingerShell
+    2300224: torso
+    2300226: torsoGuard
+    2300228: torsoHelix
+    3300000: armMechPivotBottom
+    3300002: armMechPivotBottom 1
+    3300004: armMechPivotMiddle
+    3300006: armMechPivotMiddle 1
+    3300008: armMechPivotTop
+    3300010: armMechPivotTop 1
+    3300012: backSpine
+    3300014: backSpinePlates
+    3300016: bodyRing1
+    3300018: bodyRing2
+    3300020: bodyRing3
+    3300022: bottomBodyChain1
+    3300024: bottomBodyChain2
+    3300026: head 1
+    3300028: headShell
+    3300030: headShellPanel
+    3300032: headShellPanelNeon
+    3300034: headShellShield
+    3300036: leftArm 1
+    3300038: leftArmShell
+    3300040: leftArmShellChain
+    3300042: leftEar
+    3300044: leftEarNeon
+    3300046: leftEarPlate1
+    3300048: leftEye
+    3300050: leftEyeNeon
+    3300052: leftForeArm 1
+    3300054: leftForeArmShell
+    3300056: leftForeArmShellChain
+    3300058: leftForeArmShellChainNeon
+    3300060: leftForeArmWrist
+    3300062: leftForeIndexFinger 1
+    3300064: leftForeIndexFingerShell
+    3300066: leftForeMiddleFinger 1
+    3300068: leftForeMiddleFingerShell
+    3300070: leftForePinkyFinger 1
+    3300072: leftForePinkyFingerShell
+    3300074: leftForeRingeFinger 1
+    3300076: leftForeRingeFingerShell
+    3300078: leftForeThumbFinger 1
+    3300080: leftForeThumbFingerShell
+    3300082: leftHand 1
+    3300084: leftHandPalm
+    3300086: leftHandPalmShell
+    3300088: leftIndexFinger 1
+    3300090: leftIndexFingerHolder
+    3300092: leftIndexFingerShell
+    3300094: leftMiddleFinger 1
+    3300096: leftMiddleFingerHolder
+    3300098: leftMiddleFingerShell
+    3300100: leftPinkyFinger 1
+    3300102: leftPinkyFingerHolder
+    3300104: leftPinkyFingerShell
+    3300106: leftRingFinger 1
+    3300108: leftRingFingerHolder
+    3300110: leftRingFingerShell
+    3300112: leftShoulderPad
+    3300114: leftShoulderPadNeon
+    3300116: leftThumbFinger 1
+    3300118: leftThumbFingerHolder
+    3300120: leftThumbFingerShell
+    3300122: lightArmShellChainNeon
+    3300124: pelvis 1
+    3300126: pelvisRotorBottom
+    3300128: pelvisRotorBottomNeon
+    3300130: pelvisRotorTop
+    3300132: pelvisRotorTopNeon
+    3300134: rightArm 1
+    3300136: rightArmShell
+    3300138: rightArmShellChain
+    3300140: rightArmShellChainNeon
+    3300142: rightEar
+    3300144: rightEarNeon
+    3300146: rightEarPlate1
+    3300148: rightEye
+    3300150: rightEyeNeon
+    3300152: rightForeArm 1
+    3300154: rightForeArmHelixShell
+    3300156: rightForeArmHelixShellChain
+    3300158: rightForeArmHelixShellChainNeon
+    3300160: rightForeArmWrist
+    3300162: rightForeIndexFinger 1
+    3300164: rightForeIndexFingerShell
+    3300166: rightForeMiddleFinger 1
+    3300168: rightForeMiddleFingerShell
+    3300170: rightForePinkyFinger 1
+    3300172: rightForePinkyFingerShell
+    3300174: rightForeRingFinger 1
+    3300176: rightForeRingFingerShell
+    3300178: rightForeThumbFinger 1
+    3300180: rightForeThumbFingerShell
+    3300182: rightHand 1
+    3300184: rightHandPalm
+    3300186: rightHandPalmShell
+    3300188: rightIndexFinger 1
+    3300190: rightIndexFingerHolder
+    3300192: rightIndexFingerShell
+    3300194: rightMiddleFinger 1
+    3300196: rightMiddleFingerHolder
+    3300198: rightMiddleFingerShell
+    3300200: rightPinkyFinger 1
+    3300202: rightPinkyFingerHolder
+    3300204: rightPinkyFingerShell
+    3300206: rightRingFinger 1
+    3300208: rightRingFingerHolder
+    3300210: rightRingFingerShell
+    3300212: rightShoulder
+    3300214: rightShoulderPad
+    3300216: rightShoulderPadNeon
+    3300218: rightThumbFinger 1
+    3300220: rightThumbFingerHolder
+    3300222: rightThumbFingerShell
+    3300224: torso
+    3300226: torsoGuard
+    3300228: torsoHelix
+    4300000: head
+    4300002: leftEye
+    4300004: leftEyeNeon
+    4300006: rightEye
+    4300008: rightEyeNeon
+    4300010: leftEar
+    4300012: leftEarPlate1
+    4300014: leftEarNeon
+    4300016: rightEar
+    4300018: rightEarPlate1
+    4300020: rightEarNeon
+    4300022: headShell
+    4300024: headShellPanel
+    4300026: headShellPanelNeon
+    4300028: headShellShield
+    4300030: torso
+    4300032: torsoGuard
+    4300034: leftShoulderPad
+    4300036: leftShoulderPadNeon
+    4300038: rightShoulderPad
+    4300040: rightShoulderPadNeon
+    4300042: backSpine
+    4300044: backSpinePlates
+    4300046: rightShoulder
+    4300048: torsoHelix
+    4300050: leftForeThumbFinger
+    4300052: leftForeThumbFingerShell
+    4300054: leftThumbFinger
+    4300056: leftThumbFingerShell
+    4300058: leftForeIndexFinger
+    4300060: leftForeIndexFingerShell
+    4300062: leftIndexFinger
+    4300064: leftIndexFingerShell
+    4300066: leftForeMiddleFinger
+    4300068: leftForeMiddleFingerShell
+    4300070: leftMiddleFinger
+    4300072: leftMiddleFingerShell
+    4300074: leftForeRingeFinger
+    4300076: leftForeRingeFingerShell
+    4300078: leftRingFinger
+    4300080: leftRingFingerShell
+    4300082: leftForePinkyFinger
+    4300084: leftForePinkyFingerShell
+    4300086: leftPinkyFinger
+    4300088: leftPinkyFingerShell
+    4300090: leftHand
+    4300092: leftHandPalm
+    4300094: leftHandPalmShell
+    4300096: leftThumbFingerHolder
+    4300098: leftIndexFingerHolder
+    4300100: leftMiddleFingerHolder
+    4300102: leftRingFingerHolder
+    4300104: leftPinkyFingerHolder
+    4300106: leftForeArm
+    4300108: leftForeArmWrist
+    4300110: leftForeArmShell
+    4300112: leftForeArmShellChain
+    4300114: leftForeArmShellChainNeon
+    4300116: leftArm
+    4300118: armMechPivotTop
+    4300120: armMechPivotMiddle
+    4300122: armMechPivotBottom
+    4300124: leftArmShell
+    4300126: leftArmShellChain
+    4300128: lightArmShellChainNeon
+    4300130: rightForeThumbFinger
+    4300132: rightForeThumbFingerShell
+    4300134: rightThumbFinger
+    4300136: rightThumbFingerShell
+    4300138: rightForeIndexFinger
+    4300140: rightForeIndexFingerShell
+    4300142: rightIndexFinger
+    4300144: rightIndexFingerShell
+    4300146: rightForeMiddleFinger
+    4300148: rightForeMiddleFingerShell
+    4300150: rightMiddleFinger
+    4300152: rightMiddleFingerShell
+    4300154: rightForeRingFinger
+    4300156: rightForeRingFingerShell
+    4300158: rightRingFinger
+    4300160: rightRingFingerShell
+    4300162: rightForePinkyFinger
+    4300164: rightForePinkyFingerShell
+    4300166: rightPinkyFinger
+    4300168: rightPinkyFingerShell
+    4300170: rightHand
+    4300172: rightHandPalm
+    4300174: rightHandPalmShell
+    4300176: rightThumbFingerHolder
+    4300178: rightIndexFingerHolder
+    4300180: rightMiddleFingerHolder
+    4300182: rightRingFingerHolder
+    4300184: rightPinkyFingerHolder
+    4300186: rightForeArm
+    4300188: rightForeArmWrist
+    4300190: rightForeArmHelixShell
+    4300192: rightForeArmHelixShellChain
+    4300194: rightForeArmHelixShellChainNeon
+    4300196: rightArm
+    4300198: armMechPivotTop
+    4300200: armMechPivotMiddle
+    4300202: armMechPivotBottom
+    4300204: rightArmShell
+    4300206: rightArmShellChain
+    4300208: rightArmShellChainNeon
+    4300210: pelvis
+    4300212: pelvisRotorTop
+    4300214: pelvisRotorTopNeon
+    4300216: pelvisRotorBottom
+    4300218: pelvisRotorBottomNeon
+    4300220: bottomBodyChain1
+    4300222: bottomBodyChain2
+    4300224: bodyRing1
+    4300226: bodyRing2
+    4300228: bodyRing3
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

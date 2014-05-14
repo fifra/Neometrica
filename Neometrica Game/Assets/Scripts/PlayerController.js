@@ -171,13 +171,11 @@ function Move()
 	if (Input.GetAxis("Vertical"))
 	{
 		transform.Translate(0, 0, translation);
-		//AudioSource.PlayClipAtPoint(motorSound, transform.position);
 	}
 	
 	if (Input.GetAxis("Horizontal"))
 	{
 		transform.Rotate(0, rotation, 0);
-		//AudioSource.PlayClipAtPoint(motorSound, transform.position);
 	}
 }
 

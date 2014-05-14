@@ -62,7 +62,8 @@
      <Compile Include="Assets\Scripts\MenuStart.js" />
      <Compile Include="Assets\Scripts\MouseLook.js" />
      <Compile Include="Assets\Scripts\PlayerController.js" />
-     <Compile Include="Assets\Scripts\Rotate.js" />
+     <Compile Include="Assets\Scripts\RotateItem.js" />
+     <Compile Include="Assets\Scripts\RotateRotors.js" />
      <Compile Include="Assets\Scripts\ShockwaveBehaviour.js" />
      <None Include="Assets\Packages\PickupItems\Shader\PickupShader.shader" />
      <None Include="Assets\Packages\PickupItems\Shader\HighlightAdditive.shader" />

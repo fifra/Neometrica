@@ -2,7 +2,7 @@
 @script RequireComponent(AudioSource)
 
 var hasHealth : boolean = true;
-var health : int = 100;
+var health : int = 200;
 
 var hasAmmo : boolean = true;
 var ammo : int = 20;
